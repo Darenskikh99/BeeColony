@@ -1,0 +1,65 @@
+﻿<Window x:Class="BeeColony.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeeColony"
+        mc:Ignorable="d"
+        Title="BeeColony" Height="450" Width="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" Grid.Column="0" 
+            Height="210"
+            Width="380">
+            <TextBlock Text="Диапозон значений первого аргумента" FontSize="18" />
+            <TextBox x:Name="X1Left" Grid.Row="0" Grid.Column="0" Width="190" FontSize="30" Text="-5"/>
+            <TextBox x:Name="X1Right" Grid.Row="0" Grid.Column="0" Width="190" FontSize="30" Text="5"/>
+
+            <TextBlock Text="Диапозон значений второго аргумента" FontSize="18" />
+            <TextBox x:Name="X2Left" Grid.Row="0" Grid.Column="0" Width="190" FontSize="30" Text="-5"/>
+            <TextBox x:Name="X2Right" Grid.Row="0" Grid.Column="0" Width="190" FontSize="30" Text="5"/>
+
+            <TextBlock Text="Исследуемая функция" FontSize="18" />
+            <TextBox x:Name="Func" Grid.Row="0" Grid.Column="0" Width="380" FontSize="30" Text="4*(x1-5)^2+(x2-6)^2"/>
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+            Height="210"
+            Width="430">
+            <TextBlock Text="Размер колонии" FontSize="30" Width="350" />
+            <TextBox x:Name="SizePopulation" Grid.Row="0" Grid.Column="0" Width="80" FontSize="30" Text="100"/>
+            <TextBlock Text="Разведчики лучших мест" FontSize="30" Width="350"/>
+            <TextBox x:Name="SizeBestAgents" Grid.Row="0" Grid.Column="0" Width="80" FontSize="30" Text="10"/>
+            <TextBlock Text="Рядовые разведчики" FontSize="30" Width="350"/>
+            <TextBox x:Name="SizeOrdinaryAgents" Grid.Row="0" Grid.Column="0" Width="80" FontSize="30" Text="20"/>
+
+            <TextBlock Text="Количество итераций" FontSize="30" Width="350"/>
+            <TextBox x:Name ="NumberIteration" Grid.Row="0" Grid.Column="0" Width="80" FontSize="30" Text="5"/>
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="0" Grid.Column="1"
+            Height="420"
+            Width="380">
+            <TextBlock Text="Минимальное значение" FontSize="20" Width="380"/>
+            <TextBlock x:Name="MinFunc" FontSize="18" Width="380"/>
+            <TextBlock Text="Минимум первого аргумента" FontSize="20" Width="380"/>
+            <TextBlock x:Name="X1Min" FontSize="18" Width="380"/>
+            <TextBlock Text="Минимум второго аргумента" FontSize="20" Width="380"/>
+            <TextBlock x:Name="X2Min" FontSize="18" Width="380"/>
+            <Button x:Name="Calculate" Content="Посчитать" Height="40" Width="85"
+                    Click="Calculate_Click"/>
+        </WrapPanel>
+
+
+
+    </Grid>
+</Window>
